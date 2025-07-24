@@ -21,7 +21,7 @@ const InterviewSumarry = () => {
     const fetchSummary = async () => {
       try {
         const response = await axios.post(
-          'http://localhost:5000/api/interview/summary',
+          `${import.meta.env.VITE_BACKEND_URL}/api/interview/summary`,
           { sessionId },
           {
             headers: {
@@ -46,13 +46,14 @@ const InterviewSumarry = () => {
     navigate('/');
   };
 
+
   // ✅ Export as PDF Handler
   const handleExportPdf = async () => {
     localStorage.clear(); 
     setIsExporting(true);
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/interview/export-pdf',
+        `${import.meta.env.VITE_BACKEND_URL}/api/interview/export-pdf`,
         { sessionId },
         {
           headers: {
@@ -114,7 +115,7 @@ const InterviewSumarry = () => {
         <p className="text-md font-medium text-white">Overall performance</p>
         <p className="text-gray-700 mt-2">{summary}</p>
         <p className="text-md font-semibold mt-4 text-white">
-         Skill Score: <span className="text-blue-600 text-md">{skillScore} / 100</span>
+         Skill Score: <span className="text-blue-600 text-md">{skillScore } / 100</span>
         </p>
       </div>
 

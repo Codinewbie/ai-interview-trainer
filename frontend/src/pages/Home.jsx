@@ -16,7 +16,7 @@ const Home = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/interview/start',
+        `${import.meta.env.VITE_BACKEND_URL}/api/interview/start`,
         {
           role: role || 'Frontend Developer',
           numQuestions: 5

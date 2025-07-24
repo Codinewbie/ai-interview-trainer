@@ -64,7 +64,7 @@ const Interview = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/interview/answer",
+        `${import.meta.env.VITE_BACKEND_URL}/api/interview/answer`,
         {
           sessionId,
           questionIndex: index,

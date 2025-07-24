@@ -2,15 +2,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 
+
 const Login = () => {
   const [userId, setUserId] = useState("");
   const [name, setName] = useState("");
   const navigate = useNavigate();
+// fetch(`${import.meta.env.VITE_BACKEND_URL}/api/something`)
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/login", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, name }),
