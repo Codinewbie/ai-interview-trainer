@@ -81,9 +81,12 @@ const InterviewSumarry = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen bg-[#101c24]">
-        <div className="text-xl font-medium text-gray-600 animate-pulse">
-          Loading Session Summary.....
+      <div className=" min-h-screen bg-[#101c24]">
+        <Header/>
+        <div className="flex justify-center items-center">
+          <div className="text-xl font-medium mt-48 text-gray-600 animate-pulse">
+            Loading Session Summary.....
+          </div>
         </div>
       </div>
     );
