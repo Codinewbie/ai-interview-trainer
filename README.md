@@ -80,5 +80,46 @@ oxeir-ai-interview-trainer/
 │
 └── README.md
 
+```
+##🧠 AI Logic
+- The backend uses OpenRouter's deepseek-chat-v3-0324 model.
+- On starting an interview, domain-specific questions are generated.
+- User answers are stored, and follow-up questions + feedback are generated.
+- A summary is auto-generated and stored.
+- A PDF version can be exported using pdfkit.
+
+##🧾 API Endpoints
+ - Auth
+POST /api/login
+Request:
+```json
+{
+  "userId": "1234",
+  "name": "Aman"
+}
+```
+Response:
+```json
+{
+  "token": "<JWT_TOKEN>"
+}
+```
+## Interview
+- POST /api/interview/start – Start a new interview session
+- POST /api/interview/answer – Submit answer and get follow-up
+- POST /api/interview/summary – Generate summary of the session
+- POST /api/interview/download-pdf – Export summary as PDF
+
+## 🌍 Deployment
+- Frontend: Vercel
+- Backend: Render
+- Database: MongoDB Atlas
+  
+Make sure to set environment variables correctly on both platforms.
+
+## 🙌 Acknowledgments
+- OpenRouter for model access
+- DeepSeek for AI model
+- Vercel & Render for deployment
 
 
